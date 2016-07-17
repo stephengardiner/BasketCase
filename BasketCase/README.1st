@@ -7,22 +7,15 @@ I'd love to hear your feedback to my approach, critical or otherwise, so please 
 Main notes:
 ===========
 * Requires Java 8.
-* Requires a JDK (not a JRE) for JMockit's mocking/proxying approach in the tests.
-* Executable main function not written; I have setup a smoke test available at /tests/com/stephengardiner/test/integration/basket/TestBasketAndPrice.java.
+* Requires a JDK (not a JRE) for JMockit's mocking/proxying approach in the tests. To make sure Eclipse picks the JDK, you need to click on the "Execution Environment" option under "Installed JREs" and make sure that JavaSE-1.8 uses the JDK.
+* Executable program with a "static void main" function has not been written; I have setup a smoke test in /tests/com/stephengardiner/test/integration/basket/TestBasketAndPrice.java.
 * Extra libraries required, and supplied in /libs: guava-19.0.jar, jmockit.jar, snakeyaml-1.17.jar.
 
 Rationale for my approach
 =========================
-* I've tried to think of this problem for what it is, but also in the ways it parallels pricing financial instruments (at a very high-level). Having said that
-  I've tried to resist inventing requirements - a common programmer evil. 
-* I've implemented a few interfaces with a single implementation of that interface. Obviously that can be a contentious issue on projects if done absolutely 
-  everywhere but was done here to demonstrate thinking around the generalisation of the shopping basket and shopping basket items (i.e we may have items other
-  than fruit in future; televisions, hair products, boxes of nappies, etc). 
-* I decided early on, that the basket itself would be a standard java collection (in the smoke test, I use a Set) and that would allow maximum flexibility of
-  approaches for iterating the basket (streams would make multi-threading that iteration much easier with less boiler plate for example). Hence, I decided that as 
-  the BasketItem would be a very simple base interface and the implementations could potentially be quite varied (Fruit vs. 6-pack of Beer vs. mobile phone and contract),
-  a Visitor pattern would be able to support more flexible pricing and discounting strategies, than by just adding the pricing and discounting code to the BasketItem
-  implementations. This would also help keep the principle of single-responsibility a viable notion.   
+* I've tried to think of this problem for what it is, but also in the ways it parallels pricing financial instruments (at a very high-level). Having said that I've tried to resist inventing requirements - a common programmer evil. 
+* I've implemented a few interfaces with a single implementation of that interface. Obviously that can be a contentious issue on projects if done absolutely everywhere but was done here to demonstrate thinking around the generalisation of the shopping basket and shopping basket items (i.e we may have items other than fruit in future; televisions, hair products, boxes of nappies, etc). 
+* I decided early on, that the basket itself would be a standard java collection (in the smoke test, I use a Set) and that would allow maximum flexibility of approaches for iterating the basket (streams would make multi-threading that iteration much easier with less boiler plate for example). Hence, I decided that as the BasketItem would be a very simple base interface and the implementations could potentially be quite varied (Fruit vs. 6-pack of Beer vs. mobile phone and contract), a Visitor pattern would be able to support more flexible pricing and discounting strategies, than by just adding the pricing and discounting code to the BasketItem implementations. This would also help keep the principle of single-responsibility a viable notion.   
 
   
 Thanks.
