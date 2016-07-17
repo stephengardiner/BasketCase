@@ -1,4 +1,4 @@
-package com.stephengardiner.basket.items.fruit;
+package com.stephengardiner.basket.items.impl;
 
 /**
  * @author Stephen Gardiner
