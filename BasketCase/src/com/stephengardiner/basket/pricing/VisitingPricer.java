@@ -5,6 +5,8 @@ import java.util.Optional;
 import com.stephengardiner.basket.items.BasketItem;
 
 /**
+ * A pricing interface that is my implementation the Visitor pattern.
+ * 
  * @author Stephen Gardiner
  *
  */

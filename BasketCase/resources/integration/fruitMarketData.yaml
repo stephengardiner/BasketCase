@@ -1,0 +1,30 @@
+# FruitType:
+#  - variety
+#  - price/kg
+#  - price/single
+APPLE:
+ Granny Smith:
+  - 2.24
+  - 0.32
+ Cox: 
+   - 3.39
+   - 0.55
+BANANA:
+ Dwarf Cavendish:
+   - 0.68
+   - 0.12
+ Chiquita: 
+   - 0.92
+   - 0.23
+ORANGE:
+ Navel:
+   - 2.50
+   - 0.43
+PEACH:
+  Rochester:
+   - 4.99
+   - 0.25
+LEMON:
+  Berna:
+   - 2.65
+   - 0.35

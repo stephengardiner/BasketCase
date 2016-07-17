@@ -15,10 +15,16 @@ import com.stephengardiner.basket.pricing.VisitingPricer;
 public class FruitBasketItem implements BasketItem {
 
 	// Mandatory Fruit fields
-	private final FruitType type;
 	private final LocalDate expiryDate;
 	private final String variety;
 	private final String countryOfOrigin;
+	/*
+	 * Enum used here as the fruits don't vary much from each other, for trading
+	 * purposes at least, so a full inheritance tree based on their differing
+	 * properties was not warranted, IMHO.
+	 * 
+	 */
+	private final FruitType type;
 
 	/*
 	 * Optional items for non-mandatory Fruit fields; weight being optional as
